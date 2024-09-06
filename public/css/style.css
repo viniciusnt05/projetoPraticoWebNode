@@ -1,0 +1,12 @@
+body{
+    background-color: rgb(70, 70, 70);
+}
+
+#logo-unifae{
+    width: 100px;
+    margin-left: 1vh;
+}
+
+#form-question{
+    margin-top: 5vh;
+}

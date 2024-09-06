@@ -1,0 +1,15 @@
+<% include ('partials/header.ejs') %>
+<body>
+   <% include ('partials/navbar.ejs') %>
+   <h1>Pagina inicial</h1>
+   <% perguntas.forEach(pergunta => { %>
+      <h1><%= pergunta.titulo%></h1>
+      <h1><%= pergunta.descricao%></h1>
+      <div class="footer">
+         <a href="/question/<%= pergunta.id %>">
+            <button class="btn btn-primary">Responder</button>
+         </a>
+      </div>
+   <% }) %>
+</body>
+<% include ('partials/footer.ejs') %>
