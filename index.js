@@ -53,7 +53,6 @@ app.post('/question/delete/:id', (req, res) => {
     });
 });
 
-
 app.post("/salvarQuestao", (req, res) => {
     const { titule, description } = req.body;
 
@@ -61,7 +60,7 @@ app.post("/salvarQuestao", (req, res) => {
         titulo: titule,
         descricao: description
     }).then(() => {
-        res.redirect('/');
+        res.redirect('indexPerguntas');
     }).catch(err => {
         res.send("Error: " + err);
     });
