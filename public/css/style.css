@@ -1,12 +1,120 @@
 body{
-    background-color: rgb(70, 70, 70);
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
 }
 
-#logo-unifae{
+#logo-enem{
     width: 100px;
-    margin-left: 1vh;
+    margin: 1vh 0 0 1vh;
 }
 
 #form-question{
     margin-top: 5vh;
 }
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 15px 0;
+}
+
+a {
+    text-decoration: none;
+    color: #1f5238;
+    font-size: 1.5em;
+}
+
+a:hover {
+    color: #3c763d;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.pergunta-item {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.pergunta-item:hover {
+    transform: translateY(-5px);
+}
+
+p {
+    color: #666;
+    margin: 10px 0 0;
+}
+
+.resposta-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+}
+
+.btn-delete-form {
+    margin-left: 20px;
+}
+
+.btn-delete-form button {
+    white-space: nowrap;
+}
+
+.pergunta-item {
+    margin-bottom: 20px;
+}
+
+.pergunta-item a,
+.pergunta-item form {
+    margin-right: 10px;
+}
+
+/* Rodapé bonito */
+footer {
+    background-color: #343a40; /* Verde escuro */
+    color: #ffffff;
+    text-align: center;
+    padding: 5px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+.footer-content p {
+    margin: 0;
+    font-size: 1em;
+}
+
+.footer-content a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.3s ease-in-out;
+}
+
+.footer-content a:hover {
+    border-bottom: 2px solid #f4f4f4;
+}
+

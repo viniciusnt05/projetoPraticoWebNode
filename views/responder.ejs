@@ -16,25 +16,24 @@
             <input type="hidden" name="pergunta" value="<%= pergunta.id %>">
         </form>
         <hr>
+        <hr>
         <h3>Respostas</h3>
-        <% respostas.forEach(resposta => { %>
-            <div class="card">
-                <br>
-                <div class="card-body">
-                    <%= resposta.corpo %>
+        <% if (respostas.length > 0) { %>
+            <% respostas.forEach(resposta => { %>
+                <div class="card">
+                    <div class="card-body">
+                        <%= resposta.corpo %>
+                    </div>
+                    <div class="card-footer">
+                        <a href="/resposta/delete/<%= resposta.id %>">
+                            <button class="btn btn-danger">Apagar</button>
+                        </a>
+                    </div>
                 </div>
-                <div class="card-footer">
-                    <a href="/resposta/delete/<%= resposta.id %>">
-                        <button class="btn btn-danger">Apagar</button>
-                    </a>
-                </div>
-            </div>
-            <div class="card-footer">
-                <a href="/resposta/delete/<%- resposta.id %>">
-                    <button class="btn btn-danger">Apagar</button>
-                </a>
-            </div>
-        <% }) %>
+            <% }) %>
+        <% } else { %>
+            <p>Não há respostas para esta pergunta ainda.</p>
+        <% } %>
     </div>
 </body>
 

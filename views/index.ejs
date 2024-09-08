@@ -1,15 +1,23 @@
-<% include ('partials/header.ejs') %>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Página Inicial</title>
+   <link rel="stylesheet" href="/css/style.css">
+   <link rel="stylesheet" href="/css/index.css">
+</head>
 <body>
-   <% include ('partials/navbar.ejs') %>
-   <h1>Pagina inicial</h1>
-   <% perguntas.forEach(pergunta => { %>
-      <h1><%= pergunta.titulo%></h1>
-      <h1><%= pergunta.descricao%></h1>
-      <div class="footer">
-         <a href="/question/<%= pergunta.id %>">
-            <button class="btn btn-primary">Responder</button>
-         </a>
-      </div>
-   <% }) %>
+<%- include ('partials/navbar.ejs') %>
+
+<div class="container">
+   <h1 class="title">Bem-vindo à Página Inicial</h1>
+   <div class="buttons-container">
+      <a href="/storePerguntas" class="btn-action">Criar Pergunta</a>
+      <a href="/indexPerguntas" class="btn-action">Ver Perguntas</a>
+   </div>
+</div>
+
+<%- include ('partials/footer.ejs') %>
 </body>
-<% include ('partials/footer.ejs') %>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Perguntas</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<%- include ('partials/navbar.ejs') %>
+
+<div class="container">
+    <h1>Lista de Perguntas</h1>
+
+    <% if (perguntas.length > 0) { %>
+        <ul>
+            <% perguntas.forEach(pergunta => { %>
+                <li class="pergunta-item">
+                    <h2><%= pergunta.titulo %></h2>
+                    <p><%= pergunta.descricao %></p>
+
+                    <a href="/responder/<%= pergunta.id %>" class="btn btn-primary">Responder</a>
+                    <a href="/respostas/<%= pergunta.id %>" class="btn btn-secondary">Ler Respostas</a>
+
+                    <form action="/question/delete/<%= pergunta.id %>" method="POST" style="display:inline;">
+                        <button type="submit" class="btn btn-danger">Apagar Pergunta</button>
+                    </form>
+                </li>
+            <% }) %>
+        </ul>
+    <% } else { %>
+        <p>Nenhuma pergunta disponível no momento.</p>
+    <% } %>
+</div>
+
+<%- include ('partials/footer.ejs') %>
+</body>
+</html>

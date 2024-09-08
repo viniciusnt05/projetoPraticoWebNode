@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Respostas para <%= pergunta.titulo %></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<%- include ('partials/navbar.ejs') %>
+
+<div class="container">
+    <h1>Respostas para: <%= pergunta.titulo %></h1>
+
+    <form action="/respostas/deleteall/<%= pergunta.id %>" method="POST">
+        <button type="submit" class="btn btn-danger">Apagar Todas as Respostas</button>
+    </form>
+
+    <% if (respostas.length > 0) { %>
+        <ul>
+            <% respostas.forEach(resposta => { %>
+                <li class="resposta-container">
+                    <p><%= resposta.corpo %></p>
+                    <form action="/resposta/delete/<%= resposta.id %>" method="POST" class="btn-delete-form">
+                        <button type="submit" class="btn btn-danger">Apagar Resposta</button>
+                    </form>
+                </li>
+            <% }) %>
+        </ul>
+    <% } else { %>
+        <p>Não há respostas para esta pergunta.</p>
+    <% } %>
+</div>
+
+<%- include ('partials/footer.ejs') %>
+</body>
+</html>
