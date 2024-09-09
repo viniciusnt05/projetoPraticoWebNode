@@ -118,7 +118,11 @@ footer {
     border-bottom: 2px solid #f4f4f4;
 }
 
-.btn-success {
+.btn-warning, .btn-success {
     margin-top: 20px;
+}
+
+.btn-primary{
+    float: right;
 }
 
